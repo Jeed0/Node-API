@@ -14,7 +14,12 @@ router.post('/', (req, res) => {
     const newRecord = new PostsModel({
         author: req.body.author, // req.body ne marche qu avec body parser : 
         message: req.body.message
-    })
-});
+    });
 
-module.exports = router
+    newRecord.save((err, docs) => {
+        if (!err) res.send(docs);
+        else console.log("Error creating new data : " + err);
+    })
+})
+
+module.exports = router;

@@ -6,11 +6,11 @@ const PostsModel = mongoose.model(
     { 
             author:{
                 type : String,
-                required:true
+                required:true,
             },
             message:{
                 type : String,
-                required:true
+                required:true,
             },
             date:{
                 type : Date,
