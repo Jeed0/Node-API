@@ -1,10 +1,9 @@
-//! Création d'un modele par etape : 
-const mongoose = require("mongoose"); //*1 appel de mongoose
+const mongoose = require("mongoose"); 
 
-const PostsModel = mangoose.model( //*2 Majuscule par convention -> Modele de base de données
+const PostsModel = mongoose.model( 
 
-    "node-api", //*3 dans quelle base de donnée on travaille
-    { //*5 quelles données
+    "node-api",
+    { 
             author:{
                 type : String,
                 required:true
@@ -15,12 +14,12 @@ const PostsModel = mangoose.model( //*2 Majuscule par convention -> Modele de ba
             },
             date:{
                 type : Date,
-                default: Date.now, //*6 prendra la date et heure de création auto
+                default: Date.now, 
             },
     }, 
-    "posts" //*4 dans quelle table
+    "posts" 
 );
 
-module.exports = {PostsModel}; //* Exportation du modele
+module.exports = {PostsModel};
 
 
